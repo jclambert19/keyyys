@@ -11,7 +11,6 @@ before_action :set_bunch, only: [:show,]
   end
 
   def new
-
     @bunch = Bunch.new
   end
 
@@ -25,7 +24,7 @@ before_action :set_bunch, only: [:show,]
 private
 
   def set_bunch
-    @user = User.find(params[:user_id])
+    @user = Bunch.find(params[:id])
   end
 
   def bunch_params

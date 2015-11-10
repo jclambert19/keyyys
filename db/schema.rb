@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151110105248) do
+ActiveRecord::Schema.define(version: 20151110155813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 20151110105248) do
     t.integer  "number_of_items"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "rdv_location"
-    t.datetime "rdv_date"
+    t.integer  "subscription_id"
   end
 
+  add_index "bunches", ["subscription_id"], name: "index_bunches_on_subscription_id", using: :btree
   add_index "bunches", ["user_id"], name: "index_bunches_on_user_id", using: :btree
 
   create_table "missions", force: :cascade do |t|
@@ -44,6 +44,18 @@ ActiveRecord::Schema.define(version: 20151110105248) do
 
   add_index "missions", ["bunch_id"], name: "index_missions_on_bunch_id", using: :btree
   add_index "missions", ["user_id"], name: "index_missions_on_user_id", using: :btree
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "user_id"
+    t.string   "rdv_location"
+    t.datetime "rdv_date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -66,7 +78,9 @@ ActiveRecord::Schema.define(version: 20151110105248) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "bunches", "subscriptions"
   add_foreign_key "bunches", "users"
   add_foreign_key "missions", "bunches"
   add_foreign_key "missions", "users"
+  add_foreign_key "subscriptions", "users"
 end

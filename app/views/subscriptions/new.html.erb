@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1>Création d'un abonnement</h1>
+        <%= simple_nested_form_for @subscription do |f| %>
+          <h3>Instructions d'abonnement</h3>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.input :rdv_location, placeholder: "Lieu de rendez-vous" %>
+          <%= f.input :rdv_date, placeholder: "Date de rendez-vous (19h-22h)" %>
+
+          <hr>
+          <h3>Renseignez vos trousseaux</h3>
+          <%= f.simple_fields_for :bunches do |bunch_form| %>
+            <%= bunch_form.input :name %>
+            <%= bunch_form.input :in_safe %>
+            <%= bunch_form.input :description %>
+            <%= bunch_form.input :number_of_items %>
+            <%= bunch_form.link_to_remove "Remove this bunch" %>
+          <% end %>
+          <p><%= f.link_to_add "Add a bunch", :bunches %></p>
+        <%= f.submit :subscribe %>
+        <% end %>
+    </div>
+  </div>
+</div>
