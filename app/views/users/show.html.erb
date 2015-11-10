@@ -1,1 +1,6 @@
-<h1> Bonjour <%= current_user.first_name %></h1>
+<h1> Mon profil </h1>
+<h1> <%= current_user.last_name %></h1>
+<h1> <%= current_user.first_name %></h1>
+<h1> <%= current_user.phone_number %></h1>
+<h1> <%= current_user.email %></h1>
+ <%= link_to t(".top_call_to_action", default: "Modifier"),  edit_user_registration_path , class: "navbar-wagon-item navbar-wagon-button btn" %>
