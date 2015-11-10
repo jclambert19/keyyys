@@ -10,6 +10,7 @@ before_action :set_bunch, only: [:show,]
   end
 
   def new
+
     @bunch = Bunch.new
   end
 
@@ -27,6 +28,6 @@ private
   end
 
   def bunch_params
-    params.require(:bunch).permit(:????,)
+    params.require(:bunch).permit( :user, :name, :bunch_number, :in_safe, :received_on, :description, :number_of_items)
   end
 end

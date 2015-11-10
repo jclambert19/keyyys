@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151109164847) do
+ActiveRecord::Schema.define(version: 20151110105248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20151109164847) do
     t.integer  "number_of_items"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "rdv_location"
+    t.datetime "rdv_date"
   end
 
   add_index "bunches", ["user_id"], name: "index_bunches_on_user_id", using: :btree
