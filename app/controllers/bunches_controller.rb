@@ -1,6 +1,7 @@
 class BunchesController < ApplicationController
 before_action :set_bunch, only: [:show,]
 
+
   def index
     @bunch = Bunch.all
   end

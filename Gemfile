@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 
+gem "nested_form"
 gem 'rails', '4.2.4'
 gem 'pg'
 gem 'figaro'

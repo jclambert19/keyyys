@@ -16,17 +16,14 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-            <%= f.input :name, placeholder: "Nom du trousseau" %>
-            <%= f.input :bunch_number, placeholder: "Nombre de clés" %>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-            <%= f.input :name, placeholder: "Nom du trousseau" %>
-            <%= f.input :bunch_number, placeholder: "Nombre de clés" %>
+            <%= nested_form_for @project do |f| %>
+            <%= f.fields_for :tasks do |task_form| %>
+            <%= task_form.text_field :name, placeholder: "Nom du trousseau" %>
+            <%= task_form.text_field :bunch_number, placeholder: "Nombre de clés" %>
+            <%= task_form.link_to_remove "supprimer ce trousseau" %>
+            <% end %>
+            <p><%= f.link_to_add "Ajouter un trousseau", :tasks %></p>
+            <% end %>
           </div>
         </div>
       </div>
