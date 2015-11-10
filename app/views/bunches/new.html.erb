@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1>Création de trousseau</h1>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+            <%= simple_form_for @bunch do |f| %>
+            <%= f.input :name, placeholder: "Nom du trousseau" %>
+            <%= f.input :bunch_number, placeholder: "Nombre de clés" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+            <p><%= link_to "Ajouter un trousseau", :tasks %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+            <%= f.input :rdv_location, placeholder: "Lieu de rendez-vous" %>
+            <%= f.input :rdv_date, placeholder: "Date de rendez-vous (19h-22h)" %>
+          </div>
+        </div>
+      </div>
+
+            <%= f.submit "Payement", class: "btn btn-primary"  %>
+            <% end %>
+    </div>
+  </div>
+</div>
+
