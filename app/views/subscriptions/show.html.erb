@@ -1,0 +1,33 @@
+
+<h2>Mes trousseaux</h2>
+
+<ul>
+  <% @subscription.bunches.each do |bunch| %>
+    <li>Nom du trousseau : <%= bunch.name %></li>
+    <li>Description : <%= bunch.description %></li>
+     <li>Clés <%= bunch.number_of_items %>  </li>
+
+
+  <% end %>
+</ul>
+
+<ul>
+  <%= link_to 'Ajouter un trousseau', "#", class: "navbar-wagon-item navbar-wagon-button btn btn-primary", id: "addBunch" %>
+  <%= simple_form_for [@subscription, @bunch], html: {class: "hidden"} do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :number_of_items %>
+    <%= f.submit "Add this bunch", class: "navbar-wagon-item navbar-wagon-button btn btn-primary" %>
+  <% end %>
+ </ul>
+<%= link_to 'Récupérer votre trousseau', new_subscription_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+
+<%= content_for :after_js do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      $('#addBunch').on('click', function() {
+        $('#new_bunch').removeClass('hidden')
+      })
+    })
+  <% end %>
+<% end %>

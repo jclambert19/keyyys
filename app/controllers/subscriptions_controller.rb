@@ -1,32 +1,38 @@
 class SubscriptionsController < ApplicationController
+  before_action :authenticate_user!
 
-
-def new
-  @subscription = Subscription.new
-end
-
-def create
-  @subscription = Subscription.new(subscription_params)
-  if @subscription.save
-    redirect_to user_path(current_user)
-  else
-    render :new
+  def new
+    @subscription = Subscription.new
   end
-end
 
-def edit
-end
+  def create
+    @subscription = current_user.subscriptions.new(subscription_params)
 
-def update
-end
+    if @subscription.save
+      redirect_to subscription_path(@subscription)
+    else
+      render :new
+    end
+  end
 
-private
+  def show
+    @subscription = Subscription.find(params[:id]) #.order(created_at: :desc).first
+    @bunch = Bunch.new
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  private
 
   def set_subscription
     @subscription = Subscription.find(params[:id])
   end
 
   def subscription_params
-    params.require(:subscription).permit( :start_date, :end_date, :rdv_location, :rdv_date, bunches_attributes: [:id, :name, :in_safe, :description, :number_of_itmes, :_destroy])
+    params.require(:subscription).permit( :start_date, :end_date, :rdv_location, :rdv_date, bunches_attributes: [:id, :name, :in_safe, :description, :number_of_items, :_destroy])
   end
 end

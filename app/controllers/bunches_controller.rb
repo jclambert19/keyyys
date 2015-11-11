@@ -1,5 +1,5 @@
 class BunchesController < ApplicationController
-before_action :set_bunch, only: [:show,]
+before_action :set_bunch, only: [:show]
 
 
   def index
@@ -15,9 +15,10 @@ before_action :set_bunch, only: [:show,]
   end
 
   def create
-    @bunch = @user.bunches.new(bunch_params)
+    @bunch = current_user.bunches.new(bunch_params)
+    @bunch.subscription = Subscription.find(params[:subscription_id])
     @bunch.save
-    redirect_to user_bunch_path(@user, @bunch)
+    redirect_to subscription_path(@bunch.subscription)
   end
 
 
