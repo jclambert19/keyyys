@@ -1,6 +1,17 @@
 class SubscriptionsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @subscriptions = Subscription.where.not(latitude: nil)
+
+    # Let's DYNAMICALLY build the markers for the view.
+    @subscriptions = Gmaps4rails.build_markers(@subscriptions) do |subscription, marker|
+      marker.lat subscription.latitude
+      marker.lng subscription.longitude
+    end
+
+  end
+
   def new
     @subscription = Subscription.new
   end
