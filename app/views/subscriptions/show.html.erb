@@ -1,7 +1,11 @@
+<h1>Mon abonnement</h1>
 
-<h2>Mes trousseaux</h2>
+
 
 <ul>
+
+  <li><%= @subscription.rdv_location %></li>
+  <li><%= @subscription.rdv_date %></li>
   <% @subscription.bunches.each do |bunch| %>
     <li>Nom du trousseau : <%= bunch.name %></li>
     <li>Description : <%= bunch.description %></li>
@@ -11,16 +15,8 @@
   <% end %>
 </ul>
 
-<ul>
-  <%= link_to 'Ajouter un trousseau', "#", class: "navbar-wagon-item navbar-wagon-button btn btn-primary", id: "addBunch" %>
-  <%= simple_form_for [@subscription, @bunch], html: {class: "hidden"} do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :number_of_items %>
-    <%= f.submit "Add this bunch", class: "navbar-wagon-item navbar-wagon-button btn btn-primary" %>
-  <% end %>
- </ul>
-<%= link_to 'Récupérer votre trousseau', new_subscription_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+<%= link_to 'Récupérer votre trousseau', new_subscription_path, class: "btn btn-primary" %>
+<%= link_to 'Ajouter des nouveaux trousseaux', new_subscription_path, class: "btn btn-primary" %>
 
 <%= content_for :after_js do %>
   <%= javascript_tag do %>

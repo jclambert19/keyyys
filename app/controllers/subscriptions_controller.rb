@@ -12,16 +12,6 @@ class SubscriptionsController < ApplicationController
   end
 
 
-  def create
-    @subscription = Subscription.new(subscription_params)
-    @subscription.user = current_user
-    if @subscription.save
-      redirect_to user_path(current_user)
-    else
-      render :new
-    end
-  end
-
   def new
     @subscription = Subscription.new
   end
@@ -30,7 +20,9 @@ class SubscriptionsController < ApplicationController
     @subscription = current_user.subscriptions.new(subscription_params)
 
     if @subscription.save
-      redirect_to subscription_path(@subscription)
+      respond_to do |format|
+        format.js
+      end
     else
       render :new
     end
@@ -39,6 +31,7 @@ class SubscriptionsController < ApplicationController
   def show
     @subscription = Subscription.find(params[:id]) #.order(created_at: :desc).first
     @bunch = Bunch.new
+
   end
 
   def edit
