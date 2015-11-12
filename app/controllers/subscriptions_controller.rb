@@ -10,6 +10,14 @@ class SubscriptionsController < ApplicationController
       marker.lng subscription.longitude
     end
 
+
+def create
+  @subscription = Subscription.new(subscription_params)
+  @subscription.user = current_user
+  if @subscription.save
+    redirect_to user_path(current_user)
+  else
+    render :new
   end
 
   def new

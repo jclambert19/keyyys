@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1>Historique</h1>
+      <% if current_user.subscriptions.count > 0 %>
+        <table>
+          <% @events.each do |event| %>
+            <tr>
+              <td><%= event[:date_type] %></td>
+              <td><%= event[:value] %></td>
+            </tr>
+          <% end %>
+        </table>
+      <% else %>
+        <p>Vous n'avez pas encore souscrit à notre service </p>
+        <button>Abonnez-vous</button>
+      <% end %>
+    </div>
+  </div>
+</div>
