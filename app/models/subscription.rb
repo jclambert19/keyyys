@@ -4,6 +4,7 @@ class Subscription < ActiveRecord::Base
 
   accepts_nested_attributes_for :bunches, :allow_destroy => true
 
-  geocoded_by :address
-  after_validation :geocode, if: :address_changed?
+  def full_address
+    "#{street}, #{postcode} #{city}"
+  end
 end

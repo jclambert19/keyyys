@@ -8,6 +8,7 @@ class SubscriptionsController < ApplicationController
     @subscriptions = Gmaps4rails.build_markers(@subscriptions) do |subscription, marker|
       marker.lat subscription.latitude
       marker.lng subscription.longitude
+    end
   end
 
 

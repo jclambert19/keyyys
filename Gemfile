@@ -6,7 +6,6 @@ gem 'pg'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
-gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
 
