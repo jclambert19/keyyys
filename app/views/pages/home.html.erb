@@ -1,28 +1,62 @@
 
 <div class="banner-top">
-  <h1>STOP AUX PROBLÈMES DE SERRURIER</h1>
-  <h2><font color="#bfbfbf">Épargnez-vous des soucis en nous confiant le double de vos clés</font></h2>
+  <div class="col-md-8 .col-md-offset-2">
+  <h1>NE PAYEZ PAS UNE FORTUNE POUR UN SERRURIER
+CONFIEZ-NOUS VOTRE DOUBLE DE CLÉ</h1>
+  </div>
+  <div class="col-md-2 .col-md-offset-5">
+  <%= link_to t(".top_call_to_action", default: "CONFIER MON DOUBLE DE CLÉ"), new_user_session_path , class: "navbar-wagon-item navbar-wagon-button btn" %>
+  </div>
 </div>
+
+
+  <div class="blue-block">
+    <div class="container">
+      <div class="row">
+          <h2>COMMENT ÇA MARCHE ?</h2>
+
+          <div class="col-md-4">
+            <div class="text-center">
+            <%= image_tag "key"%>
+            </div>
+            <h3>CONFIEZ-NOUS VOTRE DOUBLE DE CLÉ</h3>
+            <p>Un livreur Keyyys vient chercher votre double de clé où et quand vous le voulez.
+  Vous n'avez pas à vous déplacer !</p>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+            <%= image_tag "vault"%>
+            </div>
+            <h3>NOUS LE STOCKONS DANS UN LIEU SÉCURISÉ</h3>
+            <p>Chaque clé est anonyme et mise sous enveloppe scellée.
+  Nous ne conservons pas votre adresse.</p>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+            <%= image_tag "bike"%>
+            </div>
+            <h3>RÉCUPÉREZ-LE QUAND ET OÙ VOUS VOULEZ</h3>
+            <p>En cas de besoin, nous vous livrons votre double de clé dans l'heure 24h/24, 7j/7.
+  Un de nos livreurs vous retrouve à l'endroit de votre choix.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <div class="features bg-gradient padded text-center">
   <div class="container">
     <div class="row">
-        <h2>STOP AUX PROBLÈMES DE SERRURIER</h2>
-
-        <div class="col-md-4">
-          HELLO
-        </div>
-        <div class="col-md-4">
-          HELLO
-        </div>
-        <div class="col-md-4">
-          HELLO
-        </div>
-
-      </div>
-
+        <h2>NOTRE ZONE DE SERVICE</h2>
     </div>
   </div>
+  <div class="keyyys-map">
+  <%= image_tag "keyyys-map", :class => "map_style_image"%>
 </div>
+</div>
+
+
+
 
