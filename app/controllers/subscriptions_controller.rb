@@ -1,5 +1,6 @@
 class SubscriptionsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_subscription, only: [:edit]
 
   def index
     @subscriptions = Subscription.where.not(latitude: nil)
@@ -38,6 +39,13 @@ class SubscriptionsController < ApplicationController
   end
 
   def update
+    if @subscription.update(subscription_params)
+      respond_to do |format|
+        format.js
+      end
+    else
+      render :new
+    end
   end
 
   private

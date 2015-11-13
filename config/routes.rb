@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  resources :bunches, only: [:index]
+
   resources :subscriptions do
     resources :bunches, only: [:index, :show, :new, :create]
   end

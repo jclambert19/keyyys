@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Mes trousseaux</h1>
+
+  </div>
+</div>
+
+<div class="row">
+  <% @bunches.each do |bunch| %>
+    <div class="col-xs-3">
+      <ul>
+        <li>Nom du trousseau : <%= bunch.name %></li>
+        <li>Description : <%= bunch.description %></li>
+        <li>Clés <%= bunch.number_of_items %></li>
+      </ul>
+
+    </div>
+
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= link_to 'Récupérer votre trousseau', subscriptions_path, class: "btn btn-primary" %>
+    <%= link_to 'Ajouter des nouveaux trousseaux', new_subscription_path, class: "btn btn-primary" %>
+ </div>
+</div>
+</div>
