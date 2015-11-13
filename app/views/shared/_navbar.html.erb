@@ -19,6 +19,13 @@
           <p>Historique</p>
         <% end %>
       </div>
+
+      <div class="navbar-wagon-item text-center">
+        <%= link_to bunches_path, class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
+          <p>Trousseaux</p>
+        <% end %>
+      </div>
+
       <div class="navbar-wagon-item text-center">
         <%= link_to user_path(current_user), class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
           <%= image_tag "profile", :class => "style_image"%>
