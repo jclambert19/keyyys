@@ -14,8 +14,7 @@
     <%= render 'shared/flashes' %>
     <%= yield %>
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBs2UpqpSVwyXHFKyMsH4WJOD4Nq1-K2ZI">
-    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=<%= ENV['GOOGLE_API_KEY'] %>"></script>
 
     <%= javascript_include_tag "application" %>
 
