@@ -7,3 +7,31 @@
  .features {
   color: black;
  }
+
+.navbar-wagon-button {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 20em;
+  line-height: 40px;
+  background-color: #18AEED;
+  color: white;
+  font-size: 14px;
+  border: 2px solid #3A7BD5;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Questrial|Lato|Hammersmith+One|Carme);
+
+h1 {
+    text-align: center;
+    font-size: 64px;
+    font-family: 'Questrial', sans-serif;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}

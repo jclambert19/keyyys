@@ -8,21 +8,27 @@
 
     <% if user_signed_in? %>
       <div class="navbar-wagon-item text-center">
+        <%= link_to (current_user), class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
+          <%= image_tag "bunches", :class => "style_image"%>
+          <p>Mes clés</p>
+        <% end %>
+      </div>
+      <div class="navbar-wagon-item text-center">
         <%= link_to history_path, class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
-          <%= image_tag "calendar"%>
+          <%= image_tag "calendar", :class => "style_image"%>
           <p>Historique</p>
         <% end %>
       </div>
       <div class="navbar-wagon-item text-center">
         <%= link_to user_path(current_user), class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
-          <%= image_tag "profile"%>
+          <%= image_tag "profile", :class => "style_image"%>
           <p>Profil</p>
         <% end %>
       </div>
       <div class="navbar-wagon-item text-center">
 
         <%= link_to destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
-          <%= image_tag "off"%>
+          <%= image_tag "off", :class => "style_image"%>
           <p>Déconnexion</p>
         <% end %>
 
