@@ -8,12 +8,6 @@
 
     <% if user_signed_in? %>
       <div class="navbar-wagon-item text-center">
-        <%= link_to (current_user), class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
-          <%= image_tag "bunches", :class => "style_image"%>
-          <p>Mes clés</p>
-        <% end %>
-      </div>
-      <div class="navbar-wagon-item text-center">
         <%= link_to history_path, class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
           <%= image_tag "calendar", :class => "style_image"%>
           <p>Historique</p>
@@ -22,6 +16,7 @@
 
       <div class="navbar-wagon-item text-center">
         <%= link_to bunches_path, class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
+          <%= image_tag "bunches", :class => "style_image"%>
           <p>Trousseaux</p>
         <% end %>
       </div>
