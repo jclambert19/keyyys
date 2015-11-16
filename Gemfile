@@ -22,6 +22,8 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 
 gem "nested_form"
+gem 'money-rails'
+gem 'stripe'
 
 
 group :development, :test do

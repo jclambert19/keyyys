@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # get 'payments/new'
+
   devise_for :users
   root to: 'pages#home'
 
@@ -6,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :subscriptions do
     resources :bunches, only: [:index, :show, :new, :create]
+    resources :payments, only: [:new, :create]
   end
 
   resources :users, only: :show

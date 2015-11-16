@@ -19,11 +19,13 @@ class SubscriptionsController < ApplicationController
 
   def create
     @subscription = current_user.subscriptions.new(subscription_params)
-
+    @subscription.state = "pending"
+    @subscription.price = 30
     if @subscription.save
-      respond_to do |format|
-        format.js
-      end
+      redirect_to new_subscription_payment_path(@subscription)
+      # respond_to do |format|
+      #   format.js
+      # end
     else
       render :new
     end
@@ -31,8 +33,6 @@ class SubscriptionsController < ApplicationController
 
   def show
     @subscription = Subscription.find(params[:id]) #.order(created_at: :desc).first
-    @bunch = Bunch.new
-
   end
 
   def edit

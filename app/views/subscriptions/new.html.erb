@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <h1>Création d'un abonnement</h1>
-        <%= simple_nested_form_for @subscription, remote: true do |f| %>
+        <%= simple_nested_form_for @subscription do |f| %>
           <h3>Instructions d'abonnement</h3>
           <%= f.input :rdv_location, placeholder: "Lieu de rendez-vous" %>
           <%= f.input :rdv_date, placeholder: "Date de rendez-vous (19h-22h)" %>
@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="apply" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- <div class="modal fade" id="apply" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -43,3 +43,4 @@
 </div>
 
 
+ -->

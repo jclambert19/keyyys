@@ -1,0 +1,12 @@
+<h1>Votre Abonnement</h1>
+<ul>
+  <li>Status: <%= @subscription.state %></li>
+  <li>Bunches:
+    <ul>
+      <%= @subscription.bunches.each do | bunch | %>
+        <li><%= bunch.name %></li>
+      <% end %>
+    </ul>
+  </li>
+  <li>Prix: <%= humanized_money_with_symbol(@subscription.price) %></li>
+<ul>
