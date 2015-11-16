@@ -5,7 +5,14 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    stored_location_for(resource) || subscription_path(current_user.subscriptions.first)
+    if params[:controller] == "devise/registrations" && params[:action] == "create" # it means it's a sign up
+      stored_location_for(resource) || user_path(resource)
+    elsif params[:controller] == "devise/sessions" && params[:action] == "create"# it means we are logging-in
+      stored_location_for(resource) || bunches_path
+    else
+      stored_location_for(resource) || root_path
+    end
+
   end
 
   protected

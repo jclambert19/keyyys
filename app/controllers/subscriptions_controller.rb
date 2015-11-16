@@ -18,9 +18,12 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    @subscription = current_user.subscriptions.new(subscription_params)
+    @subscription = current_user.subscriptions.build(subscription_params)
+    parse_hour = Time.parse(params[:rdv_hour])
+    @subscription.rdv_date = @subscription.rdv_date + parse_hour.hour.hours + parse_hour.min.minutes
 
     if @subscription.save
+      p @subscriptionsption.rdv_date
       respond_to do |format|
         format.js
       end

@@ -6,8 +6,8 @@
 
 // Paddings
 .padded {
-  padding-top: 5em;
-  padding-bottom: 5em;
+  padding-top: 0em;
+  padding-bottom: 0em;
 }
 
 // Backgrounds
@@ -55,6 +55,10 @@
 
   h3 {
     color: white;
+  }
+
+  h4 {
+    text-align: center;
   }
 
   p {
