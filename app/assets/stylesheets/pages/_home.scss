@@ -10,9 +10,9 @@
 
 .navbar-wagon-button {
   margin-left: 10px;
-  padding: 0 20px;
+  padding: 0 45px;
   border-radius: 20em;
-  line-height: 40px;
+  line-height: 70px;
   background-color: #18AEED;
   color: white;
   font-size: 14px;
@@ -23,15 +23,39 @@
 
 h1 {
     text-align: center;
-    font-size: 64px;
+    font-size: 40px;
     font-family: 'Questrial', sans-serif;
     color: #0979C4;
 }
 
 h2 {
     text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 30px;
 }
 
 h3 {
     text-align: center;
+    font-size: 22px;
+}
+
+h4 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+form .btn {
+  width: 100%;
+  line-height: 40px;
+}
+
+.fields {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 30px;
 }
