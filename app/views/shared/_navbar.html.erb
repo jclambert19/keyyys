@@ -37,6 +37,8 @@
       </div>
     <% else %>
       <%= link_to t(".sign_in", default: "SE CONNECTER"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <hr>
+      <%= link_to t(".sign_up", default: "S'INSCRIRE"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
 
   </div>
