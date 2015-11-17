@@ -21,12 +21,13 @@ class SubscriptionsController < ApplicationController
     @subscription = current_user.subscriptions.build(subscription_params)
     parse_hour = Time.parse(params[:rdv_hour])
     @subscription.rdv_date = @subscription.rdv_date + parse_hour.hour.hours + parse_hour.min.minutes
-
+    @subscription.state = "pending"
+    @subscription.price = 30
     if @subscription.save
-      p @subscriptionsption.rdv_date
-      respond_to do |format|
-        format.js
-      end
+      redirect_to new_subscription_payment_path(@subscription)
+      # respond_to do |format|
+      #   format.js
+      # end
     else
       render :new
     end
@@ -34,8 +35,6 @@ class SubscriptionsController < ApplicationController
 
   def show
     @subscription = Subscription.find(params[:id]) #.order(created_at: :desc).first
-    @bunch = Bunch.new
-
   end
 
   def edit
