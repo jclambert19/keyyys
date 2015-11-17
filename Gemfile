@@ -8,6 +8,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem "coffee-rails"
 gem "gmaps4rails"
+gem "rails_admin"
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
