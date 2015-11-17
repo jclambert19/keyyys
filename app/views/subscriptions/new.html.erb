@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <h1>Confiez-nous vos clefs</h1>
-        <%= simple_nested_form_for @subscription, remote: true do |f| %>
+        <%= simple_nested_form_for @subscription do |f| %>
           <h3>Où pouvons-nous les récupérer ?</h3>
           <%= f.input :rdv_location, placeholder: "Lieu de rendez-vous" %>
           <%= f.input :rdv_date, as: :date, placeholder: "Date de rendez-vous" %>
@@ -10,17 +10,17 @@
           <div class="form-group">
             <label for="rdv-hour">Quel heure vous arrange ?</label>
             <select name="rdv_hour" class="form-control" id="rdv-hour">
-              <option value="19:00">19h</option>
+              <option value="19:00">19h00</option>
               <option value="19:30">19h30</option>
-              <option value="20:00">20h</option>
+              <option value="20:00">20h00</option>
               <option value="20:30">20h30</option>
-              <option value="21:00">19h</option>
-              <option value="21:30">19h30</option>
-              <option value="22:00">20h</option>
-              <option value="22:30">20h</option>
-              <option value="23:00">20h30</option>
-              <option value="23:30">20h</option>
-              <option value="00:00">20h30</option>
+              <option value="21:00">21h00</option>
+              <option value="21:30">21h30</option>
+              <option value="22:00">22h00</option>
+              <option value="22:30">22h30</option>
+              <option value="23:00">23h00</option>
+              <option value="23:30">23h30</option>
+              <option value="00:00">00h00</option>
             </select>
           </div>
 
@@ -28,8 +28,8 @@
           <h3>Pour quels trousseaux ?</h3>
           <%= f.simple_fields_for :bunches do |bunch_form| %>
             <%= bunch_form.input :name, label: "Test", placeholder: "Trousseau bureau" %>
-            <%= bunch_form.input :description %>
-            <%= bunch_form.input :number_of_items %>
+            <%= bunch_form.input :description, label: "Remarque sur mon trousseau", placeholder: "Trousseau bureau" %>
+            <%= bunch_form.input :number_of_items, label: "Combien de clés a votre trousseau ?" %>
             <%= bunch_form.link_to_remove do %>
               <i class="fa fa-close"></i> Supprimer ce trousseau
             <% end %>
