@@ -1,29 +1,25 @@
-<div class="row">
-  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-    <h1>Mes trousseaux</h1>
-
-  </div>
-</div>
-
-<div class="row">
-  <% @bunches.each do |bunch| %>
-    <div class="col-xs-3">
-      <ul>
-        <li>Nom du trousseau : <%= bunch.name %></li>
-        <li>Description : <%= bunch.description %></li>
-        <li>Clés <%= bunch.number_of_items %></li>
-      </ul>
-
-    </div>
-
-  <% end %>
-</div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-    <%= link_to 'Récupérer votre trousseau', subscriptions_path, class: "btn btn-primary" %>
-    <%= link_to 'Ajouter des nouveaux trousseaux', new_subscription_path, class: "btn btn-primary" %>
+ <div class="text-center">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <h1>Mes trousseaux</h1>
+    <hr>
+    <% @bunches.each do |bunch| %>
+      <div class="fields">
+        <ul class='list-unstyled'>
+          <li>Trousseau n° <%= bunch.id %></li>
+          <li>Nom du trousseau : <%= bunch.name %></li>
+          <li>Description : <%= bunch.description %></li>
+          <li>Nombre de Clé(s): <%= bunch.number_of_items %></li>
+          <li>Stocké depuis le <%= l(bunch.subscription.rdv_date, format: :date) %></li>
+        </ul>
+      </div>
+    <% end %>
+    <div class="text-center" id='action-buttons'>
+      <%= link_to 'Récupérer votre trousseau', subscriptions_path, class: "btn btn-primary" %>
+      <%= link_to 'Ajouter des nouveaux trousseaux', new_subscription_path, class: "btn btn-primary" %>
+    </div>
+
+  </div>
  </div>
-</div>
 </div>

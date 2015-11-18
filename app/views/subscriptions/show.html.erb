@@ -1,12 +1,19 @@
-<h1>Votre Abonnement</h1>
-<ul>
-  <li>Status: <%= @subscription.state %></li>
-  <li>Bunches:
-    <ul>
-      <%= @subscription.bunches.each do | bunch | %>
-        <li><%= bunch.name %></li>
-      <% end %>
-    </ul>
-  </li>
-  <li>Prix: <%= humanized_money_with_symbol(@subscription.price) %></li>
-<ul>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1>Confirmation d'abonnement</h1>
+      <hr>
+      <ul class="list-unstyled">
+        <li> <i class="fa fa-check green"></i>Le paiement de votre abonnement à Keyyys pour 1 an à bien été effectué.</li>
+        <hr>
+          <li><i class="fa fa-check green"></i>Nous vous confirmons également la prise de rendez avec un de nos coursiers pour la remise des clés:</li>
+
+              <li> Au <%= @subscription.rdv_location %></li>
+              <li> Le <%= l(@subscription.rdv_date, format: :date) %></li>
+              <li> A <%= l(@subscription.rdv_date, format: :hour) %></li>
+          </ul>
+          <hr>
+          <h1><%= link_to t(".top_call_to_action", default: "Voir mes trousseaux"),  subscription_bunches_path(@subscription) , class: "btn btn-primary" %></h1>
+    </div>
+  </div>
+</div>
