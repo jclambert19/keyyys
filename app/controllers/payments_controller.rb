@@ -20,7 +20,7 @@ class PaymentsController < ApplicationController
         currency:     'eur'
       )
 
-      @subscription.update(payment: charge.to_json, state: 'paid')
+      @subscription.update(payment: charge.to_json, state: 'paid', start_date: @subscription.rdv_date.to_date, end_date: @subscription.rdv_date.to_date + 365)
 
       redirect_to subscription_path(@subscription)
 

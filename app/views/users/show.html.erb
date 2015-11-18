@@ -1,15 +1,26 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1> Mon profil </h1>
-      <h2> <%= current_user.last_name %></h2>
-      <h2> <%= current_user.first_name %></h2>
-      <h2> <%= current_user.phone_number %></h2>
-      <h2> <%= current_user.email %></h2>
+<div class="middle-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <h1> Mon profil </h1>
+        <h2> <%= current_user.last_name %></h2>
+        <h2> <%= current_user.first_name %></h2>
+        <h2> <%= current_user.phone_number %></h2>
+        <h2> <%= current_user.email %></h2>
 
-       <h1><%= link_to t(".top_call_to_action", default: "Modifier"),  edit_user_registration_path , class: "btn btn-primary" %></h1>
+         <h1><%= link_to t(".top_call_to_action", default: "Modifier"),  edit_user_registration_path , class: "btn btn-primary" %></h1>
 
+      </div>
     </div>
   </div>
 </div>
+
+<div class="bottom">
+  <div class="container">
+    <div class="row">
+        <p>Copyright 2015 Keyyys | Tous droits réservés</p>
+    </div>
+  </div>
+</div>
+
 
