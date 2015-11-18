@@ -8,9 +8,9 @@
         <hr>
           <li><i class="fa fa-check green"></i>Nous vous confirmons également la prise de rendez avec un de nos coursiers pour la remise des clés:</li>
 
-              <li> Au <%= @subscription.rdv_location %></li>
-              <li> Le <%= l(@subscription.rdv_date, format: :date) %></li>
-              <li> A <%= l(@subscription.rdv_date, format: :hour) %></li>
+              <li> <i class="fa fa-arrow-right"></i>Au <%= @subscription.rdv_location %></li>
+              <li> <i class="fa fa-arrow-right"></i>Le <%= l(@subscription.rdv_date, format: :date) %></li>
+              <li> <i class="fa fa-arrow-right"></i>A <%= l(@subscription.rdv_date, format: :hour) %></li>
           </ul>
           <hr>
           <h1><%= link_to t(".top_call_to_action", default: "Voir mes trousseaux"),  subscription_bunches_path(@subscription) , class: "btn btn-primary" %></h1>
