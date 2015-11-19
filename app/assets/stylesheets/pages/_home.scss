@@ -143,3 +143,30 @@ body, html {
   }
 }
 
+.card-price {
+  max-width: 500px;
+  background: #1AABEC;
+  padding: 20px;
+  margin: 50Px auto;
+
+  .price {
+  display: flex;
+  align-items: flex-end;
+  text-align: justify;
+  justify-content: center;
+  }
+
+  ul {
+    display: flex;
+    margin-top: 50px;
+    color: white;
+    opacity: .6;
+  }
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  font-size: 20px;
+}
