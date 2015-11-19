@@ -1,26 +1,36 @@
-
-<div class="container">
- <div class="text-center">
-  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-    <h1>Mes trousseaux</h1>
-    <hr>
-    <% @bunches.each do |bunch| %>
-      <div class="fields">
-        <ul class='list-unstyled'>
-          <li>Trousseau n° <%= bunch.id %></li>
-          <li>Nom du trousseau : <%= bunch.name %></li>
-          <li>Description : <%= bunch.description %></li>
-          <li>Nombre de Clé(s): <%= bunch.number_of_items %></li>
-          <li>Stocké depuis le <%= l(bunch.subscription.rdv_date, format: :date) %></li>
-          <hr>
-          <%= link_to 'Récupérer ce trousseau', subscriptions_path, class: "btn btn-primary" %>
-        </ul>
+<div class="middle-block">
+  <div class="container">
+   <div class="text-center">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1>Mes trousseaux</h1>
+      <hr>
+      <% @bunches.each do |bunch| %>
+        <div class="fields">
+          <ul class='list-unstyled'>
+            <li>Trousseau n° <%= bunch.id %></li>
+            <li>Nom du trousseau : <%= bunch.name %></li>
+            <li>Description : <%= bunch.description %></li>
+            <li>Nombre de Clé(s): <%= bunch.number_of_items %></li>
+            <li>Stocké depuis le <%= l(bunch.subscription.rdv_date, format: :date) %></li>
+            <hr>
+            <%= link_to 'Récupérer ce trousseau', subscriptions_path, class: "btn btn-primary" %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="text-center" id='action-buttons'>
+        <%= link_to 'Ajouter des nouveaux trousseaux', new_subscription_path, class: "btn btn-primary" %>
       </div>
-    <% end %>
-    <div class="text-center" id='action-buttons'>
-      <%= link_to 'Ajouter des nouveaux trousseaux', new_subscription_path, class: "btn btn-primary" %>
-    </div>
 
+    </div>
+   </div>
   </div>
- </div>
+</div>
+
+
+<div class="bottom">
+  <div class="container">
+    <div class="row">
+        <p>Copyright 2015 Keyyys | Tous droits réservés</p>
+    </div>
+  </div>
 </div>

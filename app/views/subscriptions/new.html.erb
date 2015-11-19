@@ -1,46 +1,83 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1>Confiez-nous vos clefs</h1>
-        <%= simple_nested_form_for @subscription do |f| %>
-          <h3>Où pouvons-nous les récupérer ?</h3>
-          <%= f.input :rdv_location, placeholder: "Lieu de rendez-vous" %>
-          <%= f.input :rdv_date, as: :date, placeholder: "Date de rendez-vous" %>
+<div class="blue-block">
+  <div class="container">
+    <div class="row">
+          <h2>COMMENT ÇA MARCHE ?</h2>
 
-          <div class="form-group">
-            <label for="rdv-hour">Quel heure vous arrange ?</label>
-            <select name="rdv_hour" class="form-control" id="rdv-hour">
-              <option value="19:00">19h00</option>
-              <option value="19:30">19h30</option>
-              <option value="20:00">20h00</option>
-              <option value="20:30">20h30</option>
-              <option value="21:00">21h00</option>
-              <option value="21:30">21h30</option>
-              <option value="22:00">22h00</option>
-              <option value="22:30">22h30</option>
-              <option value="23:00">23h00</option>
-              <option value="23:30">23h30</option>
-              <option value="00:00">00h00</option>
-            </select>
+          <div class="col-md-4">
+            <div class="text-center">
+            <%= image_tag "key.png"%>
+            </div>
+            <h3>CONFIEZ-NOUS VOTRE DOUBLE DE CLÉ</h3>
+            <p>Un livreur Keyyys vient chercher votre double de clé où et quand vous le voulez.
+  Vous n'avez pas à vous déplacer !</p>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+            <%= image_tag "vault.png"%>
+            </div>
+            <h3>NOUS LE STOCKONS DANS UN LIEU SÉCURISÉ</h3>
+            <p>Chaque clé est anonyme et mise sous enveloppe scellée.
+  Nous ne conservons pas votre adresse.</p>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+            <%= image_tag "bike.png"%>
+            </div>
+            <h3>RÉCUPÉREZ-LE QUAND ET OÙ VOUS VOULEZ</h3>
+            <p>En cas de besoin, nous vous livrons votre double de clé dans l'heure 24h/24, 7j/7.
+  Un de nos livreurs vous retrouve à l'endroit de votre choix.</p>
           </div>
 
-          <hr>
-          <h3>Pour quels trousseaux ?</h3>
-          <%= f.simple_fields_for :bunches do |bunch_form| %>
-            <%= bunch_form.input :name, label: "Test", placeholder: "Trousseau bureau" %>
-            <%= bunch_form.input :description, label: "Remarque sur mon trousseau", placeholder: "Trousseau bureau" %>
-            <%= bunch_form.input :number_of_items, label: "Combien de clés a votre trousseau ?" %>
-            <%= bunch_form.link_to_remove do %>
-              <i class="fa fa-close"></i> Supprimer ce trousseau
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="middle-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <h1>Confiez-nous vos clefs</h1>
+          <%= simple_nested_form_for @subscription do |f| %>
+            <h3>Où pouvons-nous les récupérer ?</h3>
+            <%= f.input :rdv_location, required: true, placeholder: "Lieu de rendez-vous" %>
+            <%= f.input :rdv_date, required: true, as: :date, placeholder: "Date de rendez-vous" %>
+
+            <div class="form-group">
+              <label for="rdv-hour">Quel heure vous arrange ?</label>
+              <select name="rdv_hour" class="form-control" id="rdv-hour">
+                <option value="19:00">19h00</option>
+                <option value="19:30">19h30</option>
+                <option value="20:00">20h00</option>
+                <option value="20:30">20h30</option>
+                <option value="21:00">21h00</option>
+                <option value="21:30">21h30</option>
+                <option value="22:00">22h00</option>
+                <option value="22:30">22h30</option>
+                <option value="23:00">23h00</option>
+                <option value="23:30">23h30</option>
+                <option value="00:00">00h00</option>
+              </select>
+            </div>
+
+            <hr>
+            <h3>Pour quels trousseaux ?</h3>
+            <%= f.simple_fields_for :bunches do |bunch_form| %>
+              <%= bunch_form.input :name, required: true, label: "Nom du trousseau", placeholder: "Trousseau bureau" %>
+              <%= bunch_form.input :description, required: true, label: "Remarque sur mon trousseau", placeholder: "Trousseau bureau" %>
+              <%= bunch_form.input :number_of_items, required: true, label: "Combien de clés a votre trousseau ?" %>
+              <%= bunch_form.link_to_remove do %>
+                <i class="fa fa-close"></i> Supprimer ce trousseau
+              <% end %>
             <% end %>
+            <p>
+              <%= f.link_to_add :bunches do %>
+                <i class='fa fa-plus'></i> Ajouter un trousseau
+              <% end %>
+            </p>
+          <%= f.submit :subscribe, value: "Créer mon abonnement", class: "btn btn-primary" %>
           <% end %>
-          <p>
-            <%= f.link_to_add :bunches do %>
-              <i class='fa fa-plus'></i> Ajouter un trousseau
-            <% end %>
-          </p>
-        <%= f.submit :subscribe, value: "Créer mon abonnement", class: "btn btn-primary" %>
-        <% end %>
+      </div>
     </div>
   </div>
 </div>
@@ -67,3 +104,13 @@
 
 
  -->
+
+<div class="bottom-bis">
+  <div class="container">
+    <div class="row">
+        <p>Copyright 2015 Keyyys | Tous droits réservés</p>
+    </div>
+  </div>
+</div>
+
+

@@ -2,7 +2,7 @@ class HistoryController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @subscriptions = current_user.subscriptions
+    @subscriptions = current_user.subscriptions.where(state: "paid")
     @events = []
     @subscriptions.each do |subscription|
       @events << { date_type: "Début de votre abonnement", value: subscription.start_date }
