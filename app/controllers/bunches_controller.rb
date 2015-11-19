@@ -7,6 +7,10 @@ class BunchesController < ApplicationController
     @bunches = current_user.bunches.all
   end
 
+  def show
+
+  end
+
   # def create
   #   @bunch = current_user.bunches.new(bunch_params)
   #   @bunch.subscription = Subscription.find(params[:subscription_id])
