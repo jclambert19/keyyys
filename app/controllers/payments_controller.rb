@@ -21,7 +21,7 @@ class PaymentsController < ApplicationController
       )
 
       @subscription.update(payment: charge.to_json, state: 'paid', start_date: @subscription.rdv_date.to_date, end_date: @subscription.rdv_date.to_date + 365)
-
+      PaymentMailer.creation_confirmation(current_user).deliver_now
       redirect_to subscription_path(@subscription)
 
     rescue Stripe::CardError => e
