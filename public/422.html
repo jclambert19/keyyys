@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The change you wanted was rejected (422)</title>
+  <title>Propriété introuvable (Erreur 422)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Fjalla+One::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+  </script>
+
   <style>
   body {
-    background-color: #EFEFEF;
+    background: -webkit-linear-gradient(90deg, #00d2ff 10%, #3a7bd5 90%); /* Chrome 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(90deg, #00d2ff 10%, #3a7bd5 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(90deg, #00d2ff 10%, #3a7bd5 90%); /* IE10 */
+    background:      -o-linear-gradient(90deg, #00d2ff 10%, #3a7bd5 90%); /* Opera 11.10+ */
+    background:         linear-gradient(90deg, #00d2ff 10%, #3a7bd5 90%); /* W3C */
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
@@ -14,26 +34,25 @@
 
   div.dialog {
     width: 95%;
-    max-width: 33em;
+    max-width: 70em;
     margin: 4em auto 0;
   }
 
   div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+    padding: 100px 10% 100px;
   }
 
   h1 {
-    font-size: 100%;
-    color: #730E15;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 120px;
+    color: white;
+    line-height: 0.5em;
+  }
+
+  p {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 36px;
+    color: white;
     line-height: 1.5em;
   }
 
@@ -55,13 +74,13 @@
 </head>
 
 <body>
-  <!-- This file lives in public/422.html -->
+  <!-- This file lives in public/404.html -->
   <div class="dialog">
     <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
+      <h1>ERREUR 422</h1>
+      <img src="images/push.png" alt="">
+      <p>OUPS ! Cet objet ne prend pas en charge la propriété spécifiée.</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
