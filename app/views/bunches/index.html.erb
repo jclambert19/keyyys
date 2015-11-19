@@ -11,7 +11,7 @@
             <li>Nom du trousseau : <%= bunch.name %></li>
             <li>Description : <%= bunch.description %></li>
             <li>Nombre de Clé(s): <%= bunch.number_of_items %></li>
-            <li>Stocké depuis le <%= l(bunch.subscription.rdv_date, format: :date) %></li>
+            <li>Stocké le <%= l(bunch.subscription.rdv_date, format: :date) %></li>
             <hr>
             <%= link_to 'Récupérer ce trousseau', subscriptions_path, class: "btn btn-primary" %>
           </ul>
