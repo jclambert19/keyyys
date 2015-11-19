@@ -1,43 +1,48 @@
-<div class="blue-block">
+<div class="blue-block-bis">
   <div class="container">
     <div class="row">
-          <h2>COMMENT ÇA MARCHE ?</h2>
+      <h2>Rappel des étapes</h2>
 
-          <div class="col-md-4">
-            <div class="text-center">
-            <%= image_tag "key.png"%>
-            </div>
-            <h3>CONFIEZ-NOUS VOTRE DOUBLE DE CLÉ</h3>
-            <p>Un livreur Keyyys vient chercher votre double de clé où et quand vous le voulez.
-  Vous n'avez pas à vous déplacer !</p>
-          </div>
-          <div class="col-md-4">
-            <div class="text-center">
-            <%= image_tag "vault.png"%>
-            </div>
-            <h3>NOUS LE STOCKONS DANS UN LIEU SÉCURISÉ</h3>
-            <p>Chaque clé est anonyme et mise sous enveloppe scellée.
-  Nous ne conservons pas votre adresse.</p>
-          </div>
-          <div class="col-md-4">
-            <div class="text-center">
-            <%= image_tag "bike.png"%>
-            </div>
-            <h3>RÉCUPÉREZ-LE QUAND ET OÙ VOUS VOULEZ</h3>
-            <p>En cas de besoin, nous vous livrons votre double de clé dans l'heure 24h/24, 7j/7.
-  Un de nos livreurs vous retrouve à l'endroit de votre choix.</p>
-          </div>
-
+      <div class="col-md-4">
+        <div class="text-center">
+        <%= image_tag "key.png"%>
+        </div>
+        <h3> 1 - CONFIEZ-NOUS VOTRE DOUBLE DE CLÉ</h3>
+        <p>Un livreur Keyyys vient chercher votre double de clé où et quand vous le voulez.
+Vous n'avez pas à vous déplacer !</p>
+      </div>
+      <div class="col-md-4">
+        <div class="text-center">
+        <%= image_tag "vault.png"%>
+        </div>
+        <h3> 2 - NOUS LE STOCKONS DANS UN LIEU SÉCURISÉ</h3>
+        <p>Chaque clé est anonyme et mise sous enveloppe scellée.
+Nous ne conservons pas votre adresse.</p>
+      </div>
+      <div class="col-md-4">
+        <div class="text-center">
+        <%= image_tag "bike.png"%>
+        </div>
+        <h3> 3 - RÉCUPÉREZ-LE QUAND ET OÙ VOUS VOULEZ</h3>
+        <p>En cas de besoin, nous vous livrons votre double de clé dans l'heure 24h/24, 7j/7.
+Un de nos livreurs vous retrouve à l'endroit de votre choix.</p>
       </div>
     </div>
   </div>
 </div>
 
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Confiez-nous vos clefs</h1>
+    <p class="text-center">
+      <a href="#go"><i class="fa fa-arrow-down home-arrow-down"></i></a>
+    </p>
+  </div>
+</div>
 <div class="middle-block">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <h1>Confiez-nous vos clefs</h1>
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3" id="go">
           <%= simple_nested_form_for @subscription do |f| %>
             <h3>Où pouvons-nous les récupérer ?</h3>
             <%= f.input :rdv_location, required: true, placeholder: "Lieu de rendez-vous" %>
@@ -82,6 +87,7 @@
   </div>
 </div>
 
+
 <!-- <div class="modal fade" id="apply" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -112,5 +118,6 @@
     </div>
   </div>
 </div>
+
 
 
