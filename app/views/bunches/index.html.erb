@@ -12,11 +12,12 @@
           <li>Description : <%= bunch.description %></li>
           <li>Nombre de Clé(s): <%= bunch.number_of_items %></li>
           <li>Stocké depuis le <%= l(bunch.subscription.rdv_date, format: :date) %></li>
+          <hr>
+          <%= link_to 'Récupérer ce trousseau', subscriptions_path, class: "btn btn-primary" %>
         </ul>
       </div>
     <% end %>
     <div class="text-center" id='action-buttons'>
-      <%= link_to 'Récupérer votre trousseau', subscriptions_path, class: "btn btn-primary" %>
       <%= link_to 'Ajouter des nouveaux trousseaux', new_subscription_path, class: "btn btn-primary" %>
     </div>
 
