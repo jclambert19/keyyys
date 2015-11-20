@@ -69,7 +69,7 @@ Un de nos livreurs vous retrouve à l'endroit de votre choix.</p>
             <h3>Pour quels trousseaux ?</h3>
             <%= f.simple_fields_for :bunches do |bunch_form| %>
               <%= bunch_form.input :name, required: true, label: "Nom du trousseau", placeholder: "Trousseau bureau" %>
-              <%= bunch_form.input :description, required: true, label: "Remarque sur mon trousseau", placeholder: "Trousseau bureau" %>
+              <%= bunch_form.input :description, label: "Remarque sur mon trousseau", placeholder: "Trousseau bureau" %>
               <%= bunch_form.input :number_of_items, required: true, label: "Combien de clés a votre trousseau ?" %>
               <%= bunch_form.link_to_remove do %>
                 <i class="fa fa-close"></i> Supprimer ce trousseau
