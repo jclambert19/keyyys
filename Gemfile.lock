@@ -268,7 +268,7 @@ DEPENDENCIES
   rails-assets-underscore!
   rails_12factor
   rails_admin
-  sass-rails (~> 5.0)
+  sass-rails
   simple_form
   spring
   stripe

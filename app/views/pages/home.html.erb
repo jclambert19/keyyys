@@ -1,11 +1,12 @@
 
 <div class="banner-top">
-  <div class="col-md-8 .col-md-offset-2">
-  <h1>NE PAYEZ PAS UNE FORTUNE POUR UN SERRURIER
-<font color="#18AEED">CONFIEZ-NOUS VOTRE DOUBLE DE CLÉ</font></h1>
-  </div>
-  <div class="col-md-2 .col-md-offset-5">
-  <%= link_to t(".top_call_to_action", default: "CONFIER MON DOUBLE DE CLÉ"), new_subscription_path , class: "navbar-wagon-item navbar-wagon-button btn" %>
+  <div class='banner-content'>
+    <h1>NE PAYEZ PAS UNE FORTUNE POUR UN SERRURIER
+    <font color="#18AEED">CONFIEZ-NOUS VOTRE DOUBLE DE CLÉ</font></h1>
+    <div class='button-container'>
+
+      <%= link_to t(".top_call_to_action", default: "CONFIER MON DOUBLE DE CLÉ"), new_user_registration_path , class: "navbar-wagon-item navbar-wagon-button btn" %>
+    </div>
   </div>
 </div>
 
@@ -87,7 +88,7 @@
   <div class="container">
     <div class="row">
       <div class="text-center">
-      <%= link_to t(".top_call_to_action", default: "CONFIER MON DOUBLE DE CLÉ"), new_subscription_path , class: "navbar-wagon-item navbar-wagon-button btn cta_keys" %>
+      <%= link_to t(".top_call_to_action", default: "CONFIER MON DOUBLE DE CLÉ"), new_user_registration_path , class: "navbar-wagon-item navbar-wagon-button btn cta_keys" %>
       </div>
     </div>
   </div>
