@@ -14,3 +14,18 @@
     text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
   }
 }
+
+.banner-content {
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+
+  h1 {
+    text-align: left;
+  }
+
+  font {
+    display: block;
+  }
+}

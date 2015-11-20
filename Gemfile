@@ -10,7 +10,7 @@ gem "coffee-rails"
 gem "gmaps4rails"
 gem "rails_admin"
 
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
 gem 'bootstrap-sass'

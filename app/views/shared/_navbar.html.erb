@@ -1,45 +1,20 @@
-<nav class="navbar-wagon">
-  <div class="container navbar-wagon-container">
-
-    <a href="/">
-      <%= image_tag "keyyys-logo.png" %>
-    </a>
-    <div class="navbar-wagon-pusher"></div>
-
-    <% if user_signed_in? %>
-      <div class="navbar-wagon-item text-center">
-        <%= link_to history_path, class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
-          <%= image_tag "calendar.png", :class => "style_image"%>
-          <p>Historique</p>
-        <% end %>
-      </div>
-
-      <div class="navbar-wagon-item text-center">
-        <%= link_to bunches_path, class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
-          <%= image_tag "bunches.png", :class => "style_image"%>
-          <p>Trousseaux</p>
-        <% end %>
-      </div>
-
-      <div class="navbar-wagon-item text-center">
-        <%= link_to user_path(current_user), class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
-          <%= image_tag "profile.png", :class => "style_image"%>
-          <p>Profil</p>
-        <% end %>
-      </div>
-      <div class="navbar-wagon-item text-center">
-
-        <%= link_to destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
-          <%= image_tag "off.png", :class => "style_image"%>
-          <p>Déconnexion</p>
-        <% end %>
-
-      </div>
-    <% else %>
-      <%= link_to t(".sign_in", default: "SE CONNECTER"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+<div class='header'>
+  <a class="logo" href="/"><%= render "shared/logo" %></a>
+  <% if user_signed_in? %>
+    <div class='header-menu'>
+      <%= link_to 'Historique', history_path, class: "" %>
       <hr>
-      <%= link_to t(".sign_up", default: "S'INSCRIRE"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
-
+      <%= link_to 'Trousseaux', bunches_path, class: "" %>
+      <hr>
+      <%= link_to 'Profil', user_path(current_user), class: "" %>
+      <hr>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "" %>
+    </div>
+  <% else %>
+    <div class='header-menu'>
+      <%= link_to t(".sign_in", default: "SE CONNECTER"), new_user_session_path %>
+      <hr>
+      <%= link_to t(".sign_up", default: "S'INSCRIRE"), new_user_registration_path %>
   </div>
-</nav>
+  <% end %>
+</div>
